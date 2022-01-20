@@ -1,0 +1,20 @@
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  breakpoints: {
+    // when window width is >= 640px
+    750: {
+      slidesPerView: 3,
+      spaceBetween: 40
+    }
+  },
+  centeredSlides: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});

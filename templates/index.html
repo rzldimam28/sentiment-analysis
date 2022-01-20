@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/mystyle.css')}}"/>
+
+  <!-- Swiper CSS for Preprocess Section -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/swiperprepro.css')}}"/>
+
+  <!-- My CSS -->
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename = 'css/mystyle.css')}}"/> -->
+
+  <!-- My Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+  <title>Skripsi | rzldimam</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="container my-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+      <div class="container-fluid">
+        <a class="nav-link" href="#">
+          <h1 class="text-white my-logo" style="font-family: 'Press Start 2P', cursive;">SkripsiKu</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+
+            <a href="#" onclick="alert('Maaf, menu ini belum tersedia:(');" class="nav-link text-light me-3 my-menu">Dashboard</a>
+            <!-- <a href="https://www.tableau.com/" class="nav-link text-light me-3 my-menu"  target="_blank">Dashboard</a> -->
+            <a href="predict" class="nav-link text-light my-menu" target="_blank">Predict</a>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- Akhir Navbar -->
+
+  <!-- Jumbotron -->
+  <div class="jumbotron jumbotron-fluid text-center">
+    <div class="container-fluid">
+      <h4 class="display-4 shadow-md">PENERAPAN ANALISIS SENTIMEN PADA REVIEW APLIKASI TIKTOK DENGAN METODE KLASIFIKASI RANDOM FOREST</h4>
+      <h5 class="fw-bolder">Imam Rizaldi</h5>
+      <h5 class="fw-bolder">G 501 17 018</h5>
+    </div>
+  </div>
+  <!-- Akhir Jumbotron -->
+
+  <!-- Ringkasan -->
+  <div class="container ringkasan pb-3">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <div class="row">
+          <div class="col pb-3">
+            <h3>Ringkasan</h3>
+          </div>
+        </div>
+        <div class="row">
+          <!-- ===== -->
+
+          <!-- First Card -->
+          <div class="col-md-4">
+            <div class="card mb-3 text-white bg-dark" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-lg-12 pt-3 d-flex align-items-center justify-content-center">
+                  <img src="../static/img/1.jpg" alt="Pendahuluan" class="rounded-circle" />
+                </div>
+                <div class="col-md-12">
+                  <div class="card-body justify-content-center">
+                    <h5 class="card-title">Pendahuluan</h5>
+                    <p class="card-text">Latar Belakang, Rumusan Masalah, Tujuan Penelitian, Manfaat Penelitian dan Batasan Masalah</p>
+                    
+                    <!-- MODAL -->
+                      <button type="button" class="btn fw-bold text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" style="background-color: #008080;">
+                        Tampilkan Selengkapnya
+                      </button>
+
+                      <div class="modal fade modal-dialog-center" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 class="modal-title text-dark fw-bold text-center" id="staticBackdropLabel">Pendahuluan</h2>
+                            </div>
+                            <div class="modal-body text-dark text-start">
+                              <div class="mb-3">
+                                <h4 class="text-capitalize"><mark>Latar Belakang</mark></h4>
+                                <p class="text-justify"><span class="fw-bold">TikTok</span> adalah aplikasi yang memberikan special effects unik dan menarik yang dapat digunakan oleh pengguna dengan mudah sehingga dapat membuat video pendek dengan hasil yang keren serta dapat dipamerkan kepada teman-teman atau pengguna lainnya (Susilowati, 2018). Kehadiran aplikasi asal negeri tirai bambu ini kian mendapat berbagai respon dari masyarakat. Pada tahun 2018 aplikasi ini dinobatkan sebagai aplikasi <span class="fw-bold">terbaik</span> di Google Play Store yang dimiliki oleh Google Indonesia. Namun, TikTok juga pernah <span class="fw-bold">diblokir</span> oleh Kementerian Komunikasi dan Informatika (Kominfo) pada pertengahan 2018. Alasannya, TikTok dinilai negatif untuk anak (Kusuma, 2018). <br>
+                                <span class="fw-bold">Analisis sentimen</span> adalah sebuah teknik untuk mendeteksi opini terhadap suatu subyek (misalnya individu, organisasi ataupun produk) dalam sebuah kumpulan data (Nasukawa & Yi, 2003). Proses utama dalam analisis sentimen yaitu <span class="fw-bold">mengelompokkan</span> teks yang terdapat dalam sebuah kalimat atau dokumen kemudian menentukan pendapat yang dikemukakan tersebut apakah bersifat positif, negatif, atau netral. Terdapat beberapa metode dalam melakukan klasifikasi, salah satunya adalah <span class="fw-bold">random forest</span>. Algoritma random forest merupakan model klasifikasi yang dilakukan dengan mengembangkan beberapa decision tree berdasarkan seleksi data dan variabel yang dilakukan secara acak. Kelas yang dihasilkan dari proses klasifikasi dipilih dari kelas yang paling banyak yang dihasilkan oleh pohon keputusan yang ada (Biau, 2012) </p>
+                              </div>
+                              <div class="bg-light mb-3">
+                                <h4 class="text-capitalize bg-light"><mark>Rumusan Masalah</mark></h4>
+                                <p class="text-justify">1.	Bagaimana <span class="fw-bold">penerapan analisis sentimen</span> pada review aplikasi TikTok?</p>
+                                <p class="text-justify">2.	Berapa <span class="fw-bold">akurasi</span> yang dihasilkan metode klasifikasi random forest terhadap review aplikasi TikTok?</p>
+                              </div>
+                              <div class="mb-3">
+                              <h4 class="text-capitalize"><mark>Tujuan</mark></h4>
+                              <p class="text-justify">1.	Menerapkan analisis sentimen pada review aplikasi TikTok.</p>
+                              <p class="text-justify">2.	Menghitung akurasi yang dihasilkan oleh metode klasifikasi random forest terhadap review aplikasi TikTok.</p>
+                              </div>
+                              <div class="bg-light mb-3">
+                                <h4 class="text-capitalize"><mark>Manfaat Penelitian</mark></h4>
+                                <p class="text-justify">1.	Dapat menambah wawasan mengenai penerapan analisis statistika di kehidupan sehari-hari, khususnya analisis yang berkaitan dengan data yang berbentuk teks.</p>
+                                <p class="text-justify">2.	Hasil dari penelitian ini dapat menjadi referensi untuk mahasiswa yang ingin melakukan penelitian yang serupa, dengan memperhatikan saran.</p>
+                              </div>
+                              <div class="mb-3">
+                                <h4 class="text-capitalize"><mark>Batasan Masalah</mark></h4>
+                                <p class="text-justify">1.	Data penelitian ini hanya menggunakan review yang berada dalam Bahasa Indonesia dengan jumlah <span class="fw-bold">9.000 reviews</span>.</p>
+                                <p class="text-justify">2.	Analisis sentimen yang dilakukan pada penelitian ini menggunakan <span class="fw-bold">TF-IDF</span> sebagai metode pembobotannya.</p>
+                                <p class="text-justify">3.	Stopwords yang digunakan untuk tahap filtering adalah stopwords yang tersedia dalam package <span class="fw-bold">NLTK</span> pada python ditambah dengan daftar stopwords yang disediakan oleh penulis.</p>
+                                <p class="text-justify">4.	Pada tahapan stemming, review yang didapatkan akan diproses menggunakan package <span class="fw-bold">Sastrawi</span>.</p>
+                              </div>
+                            </div>
+                            
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger fw-bold" data-bs-dismiss="modal">Tutup</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Card -->
+          <div class="col-md-4">
+            <div class="card mb-3 text-white bg-dark" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-lg-12 pt-3 d-flex align-items-center justify-content-center">
+                  <img src="../static/img/2.jpg" alt="Tinjauan Pustaka" class="rounded-circle" />
+                </div>
+                <div class="col-md-12">
+                  <div class="card-body">
+                    <h5 class="card-title">Tinjauan Pustaka</h5>
+                    <p class="card-text">Text Mining, Analisis Sentimen, TF-IDF, Decision Tree, Random Forest, TikTok, Confusion Matrix</p>
+
+                      <button type="button" class="btn text-light fw-bold" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="background-color: #008080;">
+                        Tampilkan Selengkapnya
+                      </button>
+
+                      <div class="modal fade modal-dialog-center" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 class="modal-title text-dark fw-bold text-center" id="staticBackdropLabel">Tinjauan Pustaka</h2>
+                            </div>
+                            <div class="modal-body text-dark text-start">
+                              <div class="bg-light mb-3">
+                                <h4 class="text-capitalize bg-light"><mark>Web Scraping</mark></h4>
+                                <p class="text-justify">Web scraping merupakan proses pengambilan sebuah dokumen semi terstruktur dari internet, umumnya berupa halaman-halaman web dalam bahasa markup seperti HTML atau XHTML dan menganalisis dokumen tersebut untuk diambil data tertentu dari halaman tersebut untuk digunakan bagi kepentingan lain (Turland, 2010).</p>
+                              </div>
+                              <div class="mb-3">
+                                <h4 class="text-capitalize"><mark>Text Mining</mark></h4>
+                                <p class="text-justify">Text mining dapat didefiniskan sebagai suatu proses menggali informasi dimana seorang user berinteraksi dengan sekumpulan dokumen menggunakan tool analisis yang merupakan komponen-komponen dalam data mining (Han & Kamber, 2006)</p>
+                                <p class="text-justify">- <span class="fw-bold">Text Preprocessing:</span> Tahap ini melakukan analisis semantik (kebenaran arti) dan sintaktik (kebenaran susunan) terhadap teks.</p>
+                                <p class="text-justify">- <span class="fw-bold">Text Transformation</span>: Transformasi teks atau pembentukan atribut mengacu pada proses untuk mendapatkan representasi dokumen yang diharapkan</p>
+                                <p class="text-justify">- <span class="fw-bold">Feature Selection</span>: Pemilihan fitur (kata) merupakan tahap lanjut dari pengurangan dimensi pada proses transformasi teks.</p>
+                                <p class="text-justify">- <span class="fw-bold">Pattern Discovery</span>: Pattern discovery merupakan tahap penting untuk menemukan pola atau pengetahuan (knowledge) dari keseluruhan teks.</p>
+                              </div>
+                              <div class="bg-light mb-3">
+                                <h4 class="text-capitalize bg-light"><mark>Analisis Sentimen</mark></h4>
+                                <p class="text-justify">Analisis sentimen merupakan salah satu bidang dari ilmu komputer yang mempelajari komputasi linguistik, pengolahan bahasa alami, dan text mining yang bertujuan untuk menganalisa emosi, penilaian, sikap, pendapat, sentimen, evaluasi seseorang terhadap seorang pembicara atau penulis berkenaan dengan suatu produk, layanan, organisasi, individu, tokoh publik, topik, acara, ataupun kegiatan tertentu (Liu, 2012).</p>
+                              </div>
+                              <div class="mb-3">
+                                <h4 class="text-capitalize"><mark>TF-IDF</mark></h4>
+                                <p class="text-justify">Metode TF-IDF merupakan metode yang digunakan menentukan seberapa jauh keterhubungan kata (term) terhadap dokumen dengan memberikan bobot setiap kata. Metode TF-IDF ini menggabungkan dua konsep yaitu frekuensi kemunculan sebuah kata di dalam sebuah dokumen dan inverse frekuensi dokumen yang mengandung kata tersebut (Fitri, 2013).</p>
+                              </div>
+                              <div class="bg-light mb-3">
+                                <h4 class="text-capitalize"><mark>Decision Tree</mark></h4>
+                                <p class="text-justify">Decision tree merupakan salah satu metode klasifikasi yang menggunakan representasi struktur pohon (tree) di mana setiap node merepresentasikan atribut, cabangnya merepresentasikan nilai dari atribut, dan daun merepresentasikan kelas. Node yang paling atas dari decision tree disebut sebagai root (Gorunescu, 2011). </p>
+                              </div>
+                              <div class="mb-3">
+                                <h4 class="text-capitalize"><mark>Random Forest</mark></h4>
+                                <p class="text-justify">Istilah random forest diusulkan pertama kali oleh Tin Kam Ho pada tahun 1995, lalu dikembangkan oleh Leo Breiman pada tahun 2001. Random forest merupakan salah satu metode ensemble untuk meningkatkan akurasi suatu klasfikasi data dari sebuah pemilah tunggal yang tidak stabil melalui kombinasi banyak pemilah dari suatu metode yang sama dengan proses voting untuk memperoleh prediksi klasifikasi akhir (Van Wezel & Potharst, 2007). </p>
+                              </div>
+                              <div class="bg-light mb-3">
+                                <h4 class="text-capitalize"><mark>TikTok</mark></h4>
+                                <p class="text-justify">TikTok merupakan sebuah aplikasi yang memberikan efek spesial yang unik dan menarik yang bisa digunakan oleh para pengguna aplikasi ini dengan mudah untuk membuat vidio pendek yang keren dan bisa menarik perhatian banyak orang yang melihatnya. Aplikasi TikTok adalah sebuah jaringan sosial dan platform video musik tiongkok yang diluncurkan pada september 2016 (Aji, 2018)</p>
+                              </div>
+                              <div class="mb-3">
+                                <h4 class="text-capitalize"><mark>Confusion Matrix</mark></h4>
+                                <p class="text-justify">Confusion matrix adalah tools yang digunakan untuk evaluasi model klasifikasi untuk memperkirakan objek yang benar atau salah. Sebuah matriks dari prediksi yang akan dibandingkan dengan kelas yang asli dari inputan atau dengan kata lain berisi informasi nilai aktual dan prediksi pada klasifikasi (Untari, 2014). </p>
+                              </div>
+                            </div>
+                            
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger fw-bold" data-bs-dismiss="modal">Tutup</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Card -->
+          <div class="col-md-4">
+            <div class="card mb-3 text-white bg-dark" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-lg-12 pt-3 d-flex align-items-center justify-content-center">
+                  <img src="../static/img/3.jpg" alt="Metode Penelitian" class="rounded-circle" />
+                </div>
+                <div class="col-md-12">
+                  <div class="card-body">
+                    <h5 class="card-title">Metode Penelitian</h5>
+                    <p class="card-text">Lokasi dan Tempat Penelitian, Populasi dan Sampel, Prosedur Pengambilan Data, Analisis Data</p>
+
+                      <button type="button" class="btn text-light fw-bold" data-bs-toggle="modal" data-bs-target="#staticBackdrop3" style="background-color: #008080;">
+                        Tampilkan Selengkapnya
+                      </button>
+
+                      <div class="modal fade modal-dialog-center" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 class="modal-title text-dark fw-bold text-center" id="staticBackdropLabel">Metode Penelitian</h2>
+                            </div>
+                            <div class="modal-body text-dark text-start">
+                              <div class="mb-3">
+                                <h4 class="text-capitalize"><mark>Lokasi dan Tempat Penelitian</mark></h4>
+                                <p class="text-justify">Lokasi dan tempat penelitian ini adalah di Laboratorium Statistika Terapan Program Studi Statistika, Jurusan Matematika, Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Tadulako.</p>
+                              </div>
+                              <div class="bg-light mb-3">
+                                <h4 class="text-capitalize bg-light"><mark>Populasi dan Sampel</mark></h4>
+                                <p class="text-justify">Populasi dalam penelitian ini adalah review aplikasi TikTok berbahasa Indonesia yang berada di dalam website Google Play Store. Dengan sampel awal penelitian yang digunakan dalam penelitian ini berjumlah 9.000 reviews.</p>
+                              </div>
+                              <div class="mb-3">
+                              <h4 class="text-capitalize"><mark>Prosedur Pengambilan Data</mark></h4>
+                              <p class="text-justify">Variabel penelitian terdiri dari <span class="fw-bold">review sebagai variabel independen</span> dan <span class="fw-bold">sentimen sebagai variabel dependen</span>, dengan kategori <span class="fw-bold">critical dan positive</span></p>
+                              </div>
+                              <div class="bg-light mb-3">
+                                <h4 class="text-capitalize"><mark>Analisis Data</mark></h4>
+                                <p class="text-justify">1.	<span class="fw-bold">Pengambilan data</span>. Pengambilan data dilakukan dengan cara web scraping review dan rating aplikasi TikTok pada Google Play Store.</p>
+                                <p class="text-justify">2.	<span class="fw-bold">Pelabelan data</span>. Pelabelan data dilakukan secara manual dan subjektif dengan 2 kategori, yaitu critical dan positive.</p>
+                                <p class="text-justify">3.	<span class="fw-bold">Eksplorasi data</span>. Eksplorasi data pada penelitian ini mencakup tahapan pengecekan karakter yang ingin disaring dari data.</p>
+                                <p class="text-justify">4.	<span class="fw-bold">Preprocessing data</span>. Melakukan casefolding, stemming, tokenizing dan filtering pada data.</p>
+                                <p class="text-justify">5.	<span class="fw-bold">Analisis Sentimen</span>. Melakukan analisis sentimen dengan membuat wordcloud</p>
+                                <p class="text-justify">6.	<span class="fw-bold">Pembobotan dengan TF-IDF</span>. Memberikan bobot tiap kata menggunakan TF-IDF.</p>
+                                <p class="text-justify">7.	<span class="fw-bold">Pembagian data</span>. Data dibagi menjadi data training dan data test.</p>
+                                <p class="text-justify">8.	<span class="fw-bold">Klasifikasi random forest</span>. Melakukan klasifikasi dengan menentukan jumlah pohon optimal.</p>
+                                <p class="text-justify">9.	<span class="fw-bold">Prediksi</span>. Melakukan prediksi terhadap data test.</p>
+                                <p class="text-justify">10.	<span class="fw-bold">Evaluasi hasil prediksi</span>. Melakukan perhitungan terhadap nilai akurasi, sensitifitas dan spesifisitas.</p>
+                                <p class="text-justify">11.	<span class="fw-bold">Kesimpulan dan interpretasi</span>. Menarik kesimpulan dan membuat interpretasi atas hasil yang didapatkan. </p>
+                              </div>
+                            </div>
+                            
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger fw-bold" data-bs-dismiss="modal">Tutup</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Akhir Ringkasan -->
+
+  <!-- Ekplorasi dan Pelabelan Data -->
+  <section id="label-explore">
+    <div class="container explore mb-5">
+      <div class="row pb-4">
+        <div class="col-12">
+          <h3><span class="subjudul">4.1</span> Pelabelan dan Eksplorasi Data</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="short-div pb-3">
+            <h4>Pelabelan Data</h4>
+            <p class="text-justify">
+              Pelabelan data dilakukan secara manual oleh satu orang, yaitu dengan menentukan secara subjektif apakah review tergolong ke kelas critical atau positive.
+            </p>
+            <table class="table table-bordered text-white table-hover">
+              <thead>
+                <tr class="text-center">
+                  <th scope="col">Review</th>
+                  <th scope="col">Label</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Admin harus nya lebih aktif dalam memfilter konten sebelum masuk fyp.</td>
+                  <td>Critical</td>
+                </tr>
+                <tr>
+                  <td>TIKTOK INI BAGUS AKU BISA MEMBUAT VIDEO FF</td>
+                  <td>Positive</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Gambar di samping memperlihatkan bahwa terdapat 4.741 review yang masuk ke dalam kelas critical dan 4.259 review yang masuk ke dalam kelas positive. Hal ini menandakan bahwa terdapat lebih banyak review critical dibanding review positive dari data yang telah didapatkan sebelumnya.</p>
+          </div>
+          <div class="short-div">
+            <h4>Eksplorasi Data</h4>
+            <p class="text-justify">
+              Proses eksplorasi data dilakukan untuk menemukan dan mengekstraksi pola-pola data yang tidak relevan agar nantinya dapat disisihkan dari data. Contohnya dengan menemukan data-data yang mengandung unsur angka, tanda baca, emoji dan kata hubung. Proses eksplorasi data dapat dilakukan berulang kali hingga review yang dihasilkan benar-benar bersih agar mendapatkan nilai akurasi klasifikasi yang lebih akurat.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+          <img src="../static/img/jumlah data per kelas.png" alt="Explorasi" width="600" height="300" class="img-fluid rounded" />
+        </div>
+      </div>
+    </div>
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#BF1363" fill-opacity="1"
+        d="M0,224L60,197.3C120,171,240,117,360,112C480,107,600,149,720,176C840,203,960,213,1080,186.7C1200,160,1320,96,1380,64L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+      </path>
+    </svg> -->
+  </section>
+  <!-- Akhir Ekplorasi dan Pelabelan Data -->
+
+  <!-- Preprocess Data -->
+  <section id="preprocess">
+    <div class="container">
+      <div class="row pb-2">
+        <div class="col text-center">
+          <h3 style="color: white;"><span class="subjudul">4.2</span>Data Preprocess</h3>
+          <p style="color: white;">
+            Setelah mendapatkan pola-pola yang harus dibersihkan dari data, tahapan selanjutnya adalah membersihkan data itu sendiri atau biasa lebih dikenal dengan kata preprocessing data. Tahapan preprocessing data dapat dilihat lebih rinci pada proses di bawah.
+          </p>
+        </div>
+      </div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="card-body">
+              <h5 class="card-title">Review Awal</h5>
+              <p class="card-text"><small>
+                Maaf saya kasi bintang satu soalnya aplikasinya gk bisa di buka dari tadi saya udah pasang copot pasang copot padahal kuota kan masih banyak ruang penyimpanan juga ada kenapa? Kok masih gk bisa tolong dong admin</small></p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card-body">
+              <h5 class="card-title">Casefolding</h5>
+              <p class="card-text"><small>
+                maaf saya kasi bintang satu soalnya aplikasinya gk bisa di buka dari tadi saya udah pasang copot pasang copot padahal kuota kan masih banyak ruang penyimpanan juga ada kenapa<mark>___</mark> kok masih gk bisa tolong dong admin</small></p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card-body">
+              <h5 class="card-title">Stemming</h5>
+              <p class="card-text"><small>
+                maaf saya kasi bintang satu soalnya aplikasi<mark>___</mark> gk bisa di buka dari tadi saya udah pasang copot pasang copot padahal kuota kan masih banyak ruang <mark>simpan</mark> juga ada kenapa kok masih gk bisa tolong dong admin</small></p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card-body">
+              <h5 class="card-title">Tokenizing</h5>
+              <p class="card-text"><small>
+                ['maaf', 'saya', 'kasi', 'bintang', 'satu', 'solanya', 'aplikasi', 'gk', 'bisa', 'di', 'buka', 'dari', 'tadi', 'saya', 'udah', 'pasang', 'copot', 'pasang', 'copot', 'padahal', 'kuota', 'kan', 'masih', 'banyak', 'ruang', 'simpan', 'juga', 'ada', 'kenapa', 'kok', 'masih', 'gk', 'bisa', 'tolong', 'dong', 'admin']
+              </small></p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card-body">
+              <h5 class="card-title">Filtering</h5>
+              <p class="card-text"><small>
+                maaf kasi bintang solanya aplikasi buka pasang copot pasang copot kuota ruang simpan tolong admin</small></p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card-body">
+              <h5 class="card-title">Word Cloud</h5>
+              <img src="../static/img/wc.jpeg" alt="Word Cloud" style="width: 100%; height: 100%;">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Akhir Preprocess Data -->
+
+  <!-- Section Coba Coba (Pembobtotan Pemodelan)-->
+  <section id="coba" class="mt-5">
+    <div class="container coba-coba p-5">
+      <div class="row pb-2">
+        <div class="col text-center">
+          <h3 style="color: white;"><span class="subjudul">4.3</span> Pembobotan dan Pemodelan</h3>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center justify-content-center" style="height: 100%;">
+        <div class="col-lg-3 mb-3">
+          <div class="list-group d-flex align-items-center" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-secondary list-group-item-action fw-bold active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Pembobotan TF-IDF</a>
+            <a class="list-group-item list-group-item-secondary list-group-item-action fw-bold" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Penentuan Pohon Optimum</a>
+            <a class="list-group-item list-group-item-secondary list-group-item-action fw-bold" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Feature Importance</a>
+            <a class="list-group-item list-group-item-secondary list-group-item-action fw-bold" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Evaluasi Hasil</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-8">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+              <div class="container p-2">
+                <div class="row">
+                  <div class="col">
+                    <p class="text-justify">Pembobotan TF dilakukan dengan menghitung kemunculan kata untuk tiap review. Sedangkan perhitungan nilai IDF dilakukan dengan menghitung kemunculan kata untuk keseluruhan review. Setelah itu, nilai TF dan IDF akan dikalikan, dan akan menghasilkan nilai TF-IDF. Alur dari pembobotan TF-IDF dapat dilihat pada contoh di bawah ini</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <table class="table table-hover rounded" ;">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col">No</th>
+                          <th scope="col">Review</th>
+                          <th scope="col">Label</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-light">
+                          <th scope="row">1</th>
+                          <td>jelek banget</td>
+                          <td>Critical</td>
+                        </tr>
+                        <tr class="table-light">
+                          <th scope="row">2</th>
+                          <td>tiktok keren</td>
+                          <td>Positive</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row pb-3">
+                  <div class="col d-flex justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-arrow-down-fill" viewBox="0 0 16 16">
+                      <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8 5a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5A.5.5 0 0 1 8 5z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <table class="table table-hover rounded">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col">Review</th>
+                          <th scope="col">jelek</th>
+                          <th scope="col">banget</th>
+                          <th scope="col">tiktok</th>
+                          <th scope="col">keren</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-light">
+                          <th scope="row">1</th>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                        </tr>
+                        <tr class="table-light">
+                          <th scope="row">2</th>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row pb-3">
+                  <div class="col d-flex justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-arrow-down-fill" viewBox="0 0 16 16">
+                      <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8 5a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5A.5.5 0 0 1 8 5z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="row d-flex justify-content-center align-items-center">
+                  <div class="col-lg-7">
+                    <table class="table table-hover rounded" ;">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col">Review</th>
+                          <th scope="col">jelek</th>
+                          <th scope="col">banget</th>
+                          <th scope="col">tiktok</th>
+                          <th scope="col">keren</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-light">
+                          <th scope="row">1</th>
+                          <td>0.5</td>
+                          <td>0.5</td>
+                          <td>0</td>
+                          <td>0</td>
+                        </tr>
+                        <tr class="table-light">
+                          <th scope="row">2</th>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0.5</td>
+                          <td>0.5</td>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-lg-3">
+                    <table class="table table-hover rounded" ;">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col">Kata</th>
+                          <th scope="col">IDF</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-light">
+                          <th scope="row">jelek</th>
+                          <td>log2</td>
+                        </tr>
+                        <tr class="table-light">
+                          <th scope="row">banget</th>
+                          <td>log2</td>
+                        </tr>
+                        <tr class="table-light">
+                          <th scope="row">tiktok</th>
+                          <td>log2</td>
+                        </tr>
+                        <tr class="table-light">
+                          <th scope="row">keren</th>
+                          <td>log2</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row pb-3">
+                  <div class="col d-flex justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-arrow-down-fill" viewBox="0 0 16 16">
+                      <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8 5a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5A.5.5 0 0 1 8 5z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <table class="table table-hover rounded" ;">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col">Review</th>
+                          <th scope="col">jelek</th>
+                          <th scope="col">banget</th>
+                          <th scope="col">tiktok</th>
+                          <th scope="col">keren</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-light">
+                          <th scope="row">1</th>
+                          <td>0.15</td>
+                          <td>0.15</td>
+                          <td>0</td>
+                          <td>0</td>
+                        </tr>
+                        <tr class="table-light">
+                          <th scope="row">2</th>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0.15</td>
+                          <td>0.15</td>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+              <div class="row">
+                <div class="col">
+                  <p class="text-justify">Random forest diawali dengan teknik dasar data mining yaitu decision tree. Pada decision tree input dimasukan pada bagian atas (root) kemudian turun ke bagian bawah (leaf) untuk menentukan data tersebut termasuk kelas apa (Breiman, 2001). Karena random forest juga merupakan sebuah metode ensemble, dapat disimpulkan bahwa random forest adalah sekumpulan decision tree yang dikombinasikan sehingga mendapatkan hasil yang lebih baik. Dalam hal ini, pengklafisikasian pada random forest tentunya perlu mempertimbangkan jumlah dari decision tree yang akan dibentuk agar menghasilkan akurasi yang lebih tinggi serta mengurangi beban komputasi yang terlalu berat. Oleh karena itu, dalam penelitian ini akan dilakukan iterasi jumlah decision tree yang dibentuk dengan nilai akurasi yang dihasilkan. Gambar berikut menunjukkan grafik pemilihan jumlah decision tree yang optimum.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <img src="../static/img/pohon optimal.PNG" alt="bobot tiap kata" class="rounded" style="height: 100%; width: 100%;">
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+              <div class="row">
+                <div class="col">
+                  <p class="text-justify">Feature importance adalah sebuah nilai yang mampu mengukur tingkat kepentingan variabel independen dalam mempengaruhi variabel dependen tetapi tidak mengetahui hubungan yang terbentuk antara kedua variabel tersebut (Wulansari, 2018). Berikut merupakan 10 variabel independen dengan nilai feature importance terbesar yang disajikan pada Gambar berikut</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <img src="../static/img/feature importance.PNG" alt="bobot tiap kata" class="rounded" style="height: 100%; width: 100%;">
+                </div>
+              </div>
+              <div class="row pt-3">
+                <div class="col">
+                  <p class="text-justify">Berdasarkan Gambar di atas, dapat diketahui bahwa variabel (kata) yang memiliki nilai feature importance terbesar adalah kata ‘bagus’ yang memiliki nilai sebesar 0.1794. Dengan demikian, kata ‘bagus’ merupakan kata dengan kepentingan terbesar dalam mempengaruhi sentimen seseorang terhadap aplikasi TikTok.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+              <div class="row">
+                <div class="col">
+                  <p class="text-justify">Tahapan evaluasi hasil dilakukan dengan melihat confusion matrix yang dihasilkan oleh data test yang telah dibagi sebelumnya.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr class="table-light">
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col" colspan="2" data-valign="middle">Prediksi</th>
+                      </tr>
+                    </thead>
+                    <tbody> 
+                      <tr class="table-light">
+                        <th></th>
+                        <th></th>
+                        <th>Critical</th>
+                        <th>Positive</th>
+                        </tr>
+                      </tr>
+                      <tr class="table-light">
+                        <th scope="row"></th>
+                        <th>Critical</th>
+                        <td>834</td>
+                        <td>81</td>
+                      </tr>
+                      <tr class="table-light">
+                        <th scope="row" rowspan="2" data-valign="middle">Aktual</th>
+                        <th>Positive</th>
+                        <td>170</td>
+                        <td>651</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p class="text-justify">Berdasarkan Tabel di atas, dapat diketahui bahwa didapatkan confusion matrix dengan rincian terdapat 834 observasi kelas critical yang benar diprediksi sebagai kelas critical dan 651 observasi kelas positive yang benar diprediksi sebagai kelas positive. Selain itu, kesalahan klasifikasi juga terjadi dimana terdapat 81 observasi yang termasuk dalam kelas positive namun diprediksi masuk ke dalam kelas critical dan 170 observasi yang termasuk dalam kelas critical namun diprediksi masuk ke dalam kelas positive. Berdasarkan confusion matrix diatas, diperoleh juga nilai akurasi, sensitiVitas dan spesifisitas sebagai berikut.</p>
+                  <p>- <span class="fw-bold">Akurasi : 0.8554</span></p>
+                  <p>- <span class="fw-bold">Sensitivitas : 0.8306</span></p>
+                  <p>- <span class="fw-bold">Spesifisitas : 0.8893</span></p>
+                  <p class="text-justify">Berdasarkan hasil di atas, dapat diketahui bahwa klasifikasi berhasil mendapatkan akurasi sebesar 0.8554 atau kemampuan klasifikasi dengan menggunakan data test dapat memprediksi kelas dengan tepat adalah sebesar 85.54%.  
+                  Sensitivitas merupakan ukuran yang mengukur seberapa baik model mengklasifikasikan kelas critical yang benar-benar kelas critical. Nilai sensitivitas sebesar 0.8306 berarti bahwa klasifikasi berhasil memprediksi kelas critical yang benar-benar critical sebesar 83.06%. 
+                  Sementara spesifisitas merupakan ukuran yang mengukur seberapa baik model mengklasifikasikan kelas positive yang benar-benar kelas positive. Nilai spesifisitas sebesar 0.8893 berarti bahwa klasifikasi berhasil memprediksi kelas positive yang benar-benar positive sebesar 88.93%.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Akhir Pembobotan dan Pemodelan -->
+
+  <!-- Penutup -->
+  <section id="kesim">
+    <div class="container">
+      <div class="row mb-3">
+        <div class="col text-center">
+          <h3 style="text-transform: uppercase; font-weight: 600;"><span class="subjudul">5</span> Penutup</h3>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-4 rounded mx-3 p-4">
+          <h3 class="text-center fw-bold">Kesimpulan</h3>
+          <p class="text-justify">Berdasarkan hasil dan pembahasan yang telah dilakukan sebelumnya, maka didapat beberapa kesimpulan sebagai berikut:</p>
+          <p class="text-justify">1.	Penerapan analisis sentiment pada review aplikasi TikTok mendapat berbagai sentimen dari masyarakat. Namun kata yang cukup sering digunakan adalah kata ‘bagus’, ‘keren’ dan ‘hibur’ dalam review positive, sementara kata ‘jelek’, ‘kecewa’ dan ‘burik’ cukup sering digunakan dalam review critical.</p>
+          <p class="text-justify">2.	Analisis sentimen pada review aplikasi TikTok menggunakan metode klasifikasi random forest dengan 700 decision tree menghasilkan akurasi sebesar 0.8554, dengan kata lain kemampuan klasifikasi dapat memprediksi adalah sebesar 85.54%.</p>
+        </div>
+        <div class="col-12 col-md-4 rounded mx-3 p-4">
+          <h3 class="text-center fw-bold">Saran</h3>
+          <p class="text-justify">Penelitian selanjutnya diharapkan dapat dilakukan dengan mencari sumber data lain yang lebih relevan, menambah daftar stopwords yang digunakan dalam proses filtering serta menggunakan teknik klasifikasi berbasis neural network agar hasil klasifikasi menjadi lebih akurat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Akhir Penutup -->
+
+  <!-- Footer -->
+  <footer class="text-center text-white mt-4 p-4" style="background-color: #BF1363;">
+    <div class="container my-footer">
+      <div class="row d-flex align-items-center">
+        <div class="col col-md-4 text-start">
+          <img src="../static/img/ig_logo.png" alt="logo ig" width="20px" height="20px"/>
+          <p style="display: inline-block;" class="fw-bold">rzldimam</p> <br>
+          <img src="../static/img/git_logo.png" alt="logo github" width="20px" height="20px"/>
+          <p style="display: inline-block;" class="fw-bold">rzldimam28</p>
+        </div>
+        <div class="col col-md-4 text-start">
+          <img src="../static/img/web_logo.png" alt="logo web" width="20px" height="20px"/>
+          <p style="display: inline-block;" class="fw-bold">https://statistika.fmipa.untad.ac.id/</p> <br>
+          <img src="../static/img/youtube_logo.png" alt="logo web" width="20px" height="20px"/>
+          <p style="display: inline-block;" class="fw-bold">Statistika Untad</p>
+        </div>
+        <div class="col col-md-4 text-start">
+          <img src="../static/img/web_logo.png" alt="logo web" width="20px" height="20px"/>
+          <p style="display: inline-block;" class="fw-bold">https://untad.ac.id/</p> <br>
+          <img src="../static/img/youtube_logo.png" alt="logo web" width="20px" height="20px"/>
+          <p style="display: inline-block;" class="fw-bold">Universitas Tadulako</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="../static/js/swiperprepro.js"></script>
+
+  <!-- Turn js -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script src="../static/js/turn.js-master/turn.min.js"></script>
+  <script src="../static/js/turn.js"></script>
+
+</body>
+
+</html>

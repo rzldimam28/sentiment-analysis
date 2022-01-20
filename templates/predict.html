@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict</title>
+
+    <style>
+        * {
+					margin: 0;
+					padding: 0;
+					background-color: white;
+					font-family: Arial, Helvetica, sans-serif;
+					color: grey;
+					box-sizing: border-box;
+					/* border: 1px solid red; */
+        }
+				.main {
+					height: 100vh;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				.container {
+					width: 500px;
+					height: 300px;
+					background-color: white !important;
+				  display: flex;
+					justify-content: center;
+					align-items: center;
+					border-radius: 10px;
+					box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px, 
+					rgba(0, 0, 0, 0.1) 0px -4px 12px;
+				}
+				.mylabel{
+					text-align: center;
+				}
+				button {
+					width: 120px;
+					height: 40px;
+					/* background-color: #BF1363; */
+					background-color: teal;
+					border: 0;
+					border-radius: 3px;
+					color: white;
+					font-weight: bold;
+				}
+				button:hover {
+					/* background-color: teal; */
+					background-color: #BF1363;
+				}
+        #progressBar {
+          width: 70px;
+          height: 70px;
+          /* display: inline-block; */
+        }
+        input {
+					outline: 0;
+					color: hotpink;
+          width: 200px;
+					height: 50px;
+					background-color: white;
+					color: black;
+					border-radius: 5px;
+					border: 2px solid grey;
+					padding: 3px;
+        }
+				button {
+					margin: 0 auto;
+				}
+				@media (max-width: 576px) {
+					.container {
+						width: 300px;
+						padding: 10px;
+					}
+				}
+    </style>
+</head>
+<body>
+	<div class="main">
+    <div class="container">
+        <form id="form_review">
+            <label for="review" class="mylabel">Masukkan <strong>Review</strong> anda dibawah</label> <br> <br>
+            <input type="text" name="review" id="myText" autocomplete="off"> <br> <br>
+            <button class="mybutton">Predict</button>
+        </form>
+
+        <div id="progressBar"></div>
+    </div>
+	</div>
+    <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.8.1/dist/progressbar.js"></script>
+
+    <script>
+        var circle = new ProgressBar.Circle('#progressBar', {
+            color: '#c92d1a',
+            trailColor: 'transparent',
+            strokeWidth: 5,
+            duration: 1000,
+            easing: 'easeInOut'
+          });
+				
+        var form = document.querySelector('#form_review');
+        console.log(form);
+        var showText = document.querySelector('#showText')
+
+        // listen event submit pada form
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // cegah reload
+
+            // ambil nilai text review
+            const text = form.review.value;
+            const data = { review: text } 
+            console.log('submitted', data)
+            
+            getServerScore(data); // pilih nilai dari server
+            // getLocalScoreFromInput(); // pilih nilai dari input
+        }) 
+
+        function getLocalScoreFromInput() {
+            var myText = document.querySelector('#myText');
+            var score = Number(myText.value);
+            animateCircle(score);
+        }
+
+        function getServerScore(data) {
+            // bikin request POST / ke server
+            fetch('/predict', {
+                method: 'POST',
+                body: JSON.stringify(data), // data di serialisai jadi string
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(res => res.json())
+                .then(res => {
+                    // todo: 
+                    animateCircle(res.score);
+                });
+        }
+
+        /**
+         * @param {number} score 
+         */ 
+        function animateCircle(score) {
+            var result = score / 100;
+            if (result == 0) {
+                circle.setText(``);
+                circle.text.style.color = '#ddd';
+            } else if (result < 0.5) {
+                circle.setText('Critical');
+                circle.text.style.color = '#BF1363';
+                circle.path.setAttribute('stroke', '#BF1363');
+            } else {
+                circle.setText('Positive');
+                circle.text.style.color = '#008080';
+                circle.path.setAttribute('stroke', '#008080');
+            };
+            circle.text.style.fontFamily = 'Helvetica';
+            circle.text.style.fontSize = '12px';
+            circle.animate(result);
+        }
+    </script>
+</body>
+</html>

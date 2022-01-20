@@ -1,0 +1,244 @@
+/* color palette:
+blue : #0d6efd,
+red : #dc3545,
+black : #212529 */
+
+body {
+  /* min-height: 5000px; */
+  background-color: #231E23;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+mark {
+  background-color: #008080;
+  color: white;
+}
+
+nav {
+  text-transform: uppercase;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.my-nav {
+  padding-top: 10px;
+}
+
+.my-menu {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.my-menu:hover {
+  text-shadow: 2px 3px #dc3545, -1px -3px #0d6efd;
+}
+
+.nav-link h1 {
+  font-size: 1.8em;
+  font-weight: 600;
+  text-shadow: 1px 2px #dc3545, -1px -2px #0d6efd;
+}
+
+.my-logo {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.jumbotron {
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 650px;
+  padding-top: 120px;
+  margin-top: -100px;
+}
+
+.jumbotron h4 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 40px;
+  margin: 50px auto;
+}
+
+.jumbotron h5 {
+  font-weight: 400;
+}
+
+.ringkasan {
+  background-color: white;
+  color: black;
+  margin-top: -50px;
+  padding-top: 20px;
+  border-radius: 5px;
+}
+
+.kartu {
+  background-color: white;
+  color: black;
+}
+
+.ringkasan h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ringkasan img {
+  width: 100px;
+}
+
+.explore {
+  margin-top: 80px;
+}
+
+.explore h3 {
+  text-transform: uppercase;
+}
+
+.explore h3,
+.explore h4 {
+  font-weight: 600;
+}
+
+.subjudul {
+  font-size: 1.8em;
+  text-shadow: 2px 4px #dc3545, -1px -3px #0d6efd;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#preprocess {
+  background-color: #231E23;
+  padding-top: 50px;
+  margin-top: -50px;
+  color: black;
+}
+
+#preprocess h3 {
+  text-transform: uppercase;
+}
+
+#preprocess h3,
+h5 {
+  font-weight: 600;
+}
+
+#preprocess .subjudul {
+  font-size: 1.8em;
+  text-shadow: 1px 2px #dc3545, -1px -2px #0d6efd;
+  margin-right: 10px;
+}
+
+#coba {
+  margin-bottom: 200px;
+}
+
+#coba .coba-coba {
+  height: 820px;
+  width: 100%;
+}
+
+#coba h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+h4 {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+/* For Flip */
+/* #magazine{
+  color: darkcyan;
+  margin: auto;
+	width: 35%;
+	height: 650px;
+} */
+/* #magazine .turn-page{
+	background-color:#ccc;
+	background-size:100% 100%;
+} */
+
+/* footer {
+  height: 60px;
+} */
+
+/* .my-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8em;
+  font-weight: bold;
+} */
+
+#kesim {
+  margin-top: 0;
+}
+
+/* #kesim .majalah {
+  height: 80%;
+  width: 50%;
+  background-color: white;
+} */
+
+footer {
+  height: 150px;
+  font-size: 0.7em;
+}
+
+/* Responsive Breakpoint */
+@media (max-width: 768px) {
+  .jumbotron h4 {
+    font-size: 28px;
+  }
+
+  .jumbotron h5 {
+    font-size: 15px;
+  }
+
+  .ringkasan {
+    width: 80%;
+  }
+
+  .ringkasan img {
+    padding-top: 10px;
+  }
+
+  .my-arrow {
+    transform: rotate(90deg);
+    margin-bottom: 20px;
+  }
+
+  #preprocess {
+    height: 750px;
+  }
+
+  #coba {
+    margin-top: -200px !important;
+  }
+
+  #coba .coba-coba {
+    height: 1000px;
+  }
+
+  #kesim {
+    margin-top: -60px !important;
+  }
+
+  .my-footer {
+    font-size: 0.5em;
+  }
+}
+
+@media (max-width: 900px) {
+  #kesim {
+    margin-top: -125px;
+  }
+
+  #coba .coba-coba {
+    height: 1300px;
+  }
+}

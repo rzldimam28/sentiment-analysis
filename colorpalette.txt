@@ -1,0 +1,23 @@
+1.
+/* CSS HEX */
+--jet: #353535ff;
+--ming: #3c6e71ff;
+--white: #ffffffff;
+--gainsboro: #d9d9d9ff;
+--indigo-dye: #284b63ff;
+
+2.
+/* CSS HEX */
+--y-in-mn-blue: #355070ff;
+--chinese-violet: #6d597aff;
+--rose-dust: #b56576ff;
+--candy-pink: #e56b6fff;
+--tumbleweed: #eaac8bff;
+
+3.
+/* CSS HEX */
+--rich-black-fogra-29: #011627ff;
+--baby-powder: #fdfffcff;
+--tiffany-blue: #2ec4b6ff;
+--rose-madder: #e71d36ff;
+--orange-peel: #ff9f1cff;
